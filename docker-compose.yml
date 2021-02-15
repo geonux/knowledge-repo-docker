@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 80:80
+    networks:
+      - default
+    volumes:
+    - ./git_repo:/app/git_repo
+    environment:
+# Fill in any Knowledge repo env variables here
+      - PORT=80
+      - SERVER_NAME=localhost
+      - RUNTIME_CONTEXT=local
+      #- GIT_URL=https://github.com/xxxx/xxxxxx
